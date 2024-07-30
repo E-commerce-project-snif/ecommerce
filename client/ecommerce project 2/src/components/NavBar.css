@@ -1,0 +1,20 @@
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* justify-content: space-between; */
+  font-size: 12px;
+  background-color: black;
+  color: white;
+  height: 50px;
+  gap: 12px;
+}
+
+.navbar__shopnow {
+  font-weight: bold;
+  text-decoration: underline;
+}
+.navbar__langage {
+  margin-left: 250px;
+  left: 10px;
+}
