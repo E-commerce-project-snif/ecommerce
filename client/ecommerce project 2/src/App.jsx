@@ -1,13 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home.jsx"
+import Footer from "./components/Footer.jsx"
+import { useState } from "react";
+ 
 import './App.css'
 import AdminDash from './components/AdminDash.jsx';
 import Category from './components/Category.jsx'
 import HomeDashboard from './components/HomeDashboard.jsx';
 import Products from './components/Products.jsx';
 import Users from './components/Users.jsx';
+
+
+
+
 
 
 
