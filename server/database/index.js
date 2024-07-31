@@ -3,7 +3,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 
 // Create a Sequelize instance
-const sequelize = new Sequelize('commerce', 'fourat', 'Liverpool1892', {
+const sequelize = new Sequelize('commerce', 'root', 'root', {
   host: 'localhost',
   dialect: 'mysql',
 });
