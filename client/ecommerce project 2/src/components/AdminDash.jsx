@@ -2,6 +2,7 @@ import React from 'react'
 import '../components/AdminDash.css'
 import { useNavigate } from 'react-router-dom';
 
+
 function AdminDash() {
   
 const navigate = useNavigate();
@@ -46,6 +47,7 @@ const navigateproduct=useNavigate();
       <div className='graph'>
          <img src="https://www.hubspot.com/hs-fs/hubfs/how-many-visitors-should-your-site-get_6.webp?width=650&height=402&name=how-many-visitors-should-your-site-get_6.webp" alt="stats" />
       </div>
+      
     </div>
   );
 }
