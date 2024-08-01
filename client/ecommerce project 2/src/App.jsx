@@ -1,44 +1,59 @@
-// import { Routes, Route, Link } from "react-router-dom";
+
+import "./App.css";
+import NavBar from "./components/NavBar.jsx";
+import SignUp from "./components/SingnUp.jsx";
+import Login from "./components/Login.jsx";
+import ProductDetails from "./components/ProductDetails.jsx";
+import RelatedItem from "./components/RelatedItem.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-
-
+import Home from "./components/Home.jsx";
+import Footer from "./components/Footer.jsx";
 import { useState } from "react";
- 
-
-
-import './App.css'
-import AdminDash from './components/AdminDash.jsx';
-import Category from './components/Category.jsx'
-  
-import Products from './components/Products.jsx';
-import Users from './components/Users.jsx';
+import AdminDash from "./components/AdminDash.jsx";
+import Category from "./components/Category.jsx";
+import HomeDashboard from "./components/HomeDashboard.jsx";
+import Products from "./components/Products.jsx";
+import Users from "./components/Users.jsx";
+import FlashSales from "./components/FlashSales.jsx";
+import Contact from './components/Contact.jsx';
 import MyAccount from "./components/MyAccount.jsx";
 
-
-
-
-
-
-
-
 function App() {
-  
-
   return (
     <div>
-     <Router>  
+
+      <div
+        className="navbar"
+        // style={{
+        //   position: "-webkit-sticky",
+        //   position: "sticky",
+        //   top: "0px",
+        //   width: "100%",
+        // }}
+      >
+        <NavBar />
+      </div>
+
+<Router>
       <Routes>
-        <Route path="/" >
-          <Route path='/admin'     element={<AdminDash />} />
-          <Route path="/users"     element={<Users />} />
-          <Route path="/products"  element={<Products />} />
-          <Route path="/category"  element={<Category />} />
+        <Route path="/">
+          <Route path="/admin" element={<AdminDash />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="products" element={<Products />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/sign" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/details" element={<ProductDetails />} />
+          <Route path="/related" element={<RelatedItem />} />
+          <Route path="/flash" element={<FlashSales />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/myAccount" element={<MyAccount />} />
         </Route>
       </Routes>
-    </Router>
+      </Router>
     </div>
-  )
-}
+  );
 
+}
 export default App
