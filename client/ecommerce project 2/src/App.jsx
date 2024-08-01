@@ -1,45 +1,4 @@
 
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import './App.css'
-// import AdminDash from './components/AdminDash.jsx';
-// import Category from './components/Category.jsx'
-// import HomeDashboard from './components/HomeDashboard.jsx';
-// import Products from './components/Products.jsx';
-// import Users from './components/Users.jsx';
-// import Contact from './components/Contact.jsx';
-
-
-
-
-// function App() {
-  
-
-//   return (
-//     <>
-//      <BrowserRouter>
-//       <Routes>
-//         <Route path="/" >
-//           <Route path='/admin' element={<AdminDash />} />
-//           <Route path="/users" element={<Users />} />
-//           <Route path="products" element={<Products />} />
-//           <Route path="/category" element={<Category />} />
-//           <Route path="/contact" element={<Contact />} />
-//         </Route>
-//       </Routes>
-//     </BrowserRouter>
-//     </>
-//   )
-// }
-
-
-
-
-
-
-
 import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import SignUp from "./components/SingnUp.jsx";
@@ -57,10 +16,12 @@ import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
 import Contact from './components/Contact.jsx';
+import MyAccount from "./components/MyAccount.jsx";
 
 function App() {
   return (
     <div>
+
       <div
         className="navbar"
         // style={{
@@ -87,10 +48,12 @@ function App() {
           <Route path="/related" element={<RelatedItem />} />
           <Route path="/flash" element={<FlashSales />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/myAccount" element={<MyAccount />} />
         </Route>
       </Routes>
       </Router>
     </div>
   );
+
 }
 export default App
