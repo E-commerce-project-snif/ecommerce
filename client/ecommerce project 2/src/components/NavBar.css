@@ -8,13 +8,22 @@
   color: white;
   height: 50px;
   gap: 12px;
+  /* margin-bottom: 40px; */
 }
+
+
 
 .navbar__shopnow {
   font-weight: bold;
   text-decoration: underline;
+  margin-left: 250px;
 }
 .navbar__langage {
   margin-left: 250px;
   left: 10px;
 }
+/* .Hero__container {
+  margin-top: 150px;
+  margin-right: 400px;
+
+} */
