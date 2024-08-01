@@ -9,6 +9,7 @@ function AdminDash() {
 const navigate = useNavigate();
 const navigateproduct=useNavigate();
     return (
+      
       <div className="container" >
       <aside className="sidebar">
         <nav>
@@ -44,12 +45,18 @@ const navigateproduct=useNavigate();
           </ul>
 
         </section>
+        
       </main>
       <div className='graph'>
          <img src="https://www.hubspot.com/hs-fs/hubfs/how-many-visitors-should-your-site-get_6.webp?width=650&height=402&name=how-many-visitors-should-your-site-get_6.webp" alt="stats" />
+      
       </div>
-      {/* <Chartt/> */}
+      <div>
+        
+      </div>
     </div>
+    
+    
   );
 }
 
