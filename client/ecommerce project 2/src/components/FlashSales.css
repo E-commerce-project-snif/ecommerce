@@ -1,0 +1,13 @@
+.icon__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon__sales {
+  position: relative;
+}
+
+.img__sales {
+  margin-left: 50px;
+  width: 50px;
+}

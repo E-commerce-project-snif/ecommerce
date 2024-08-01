@@ -1,11 +1,20 @@
 import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import { Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home.jsx";
 import SignUp from "./components/SingnUp.jsx";
 import Login from "./components/Login.jsx";
 import ProductDetails from "./components/ProductDetails.jsx";
 import RelatedItem from "./components/RelatedItem.jsx";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import Home from "./components/Home.jsx";
+import Footer from "./components/Footer.jsx";
+import { useState } from "react";
+import AdminDash from "./components/AdminDash.jsx";
+import Category from "./components/Category.jsx";
+import HomeDashboard from "./components/HomeDashboard.jsx";
+import Products from "./components/Products.jsx";
+import Users from "./components/Users.jsx";
+import FlashSales from "./components/FlashSales.jsx";
 
 function App() {
   return (
@@ -21,12 +30,20 @@ function App() {
       >
         <NavBar />
       </div>
+
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sign" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/details" element={<ProductDetails />} />
-        <Route path="/related" element={<RelatedItem />} />
+        <Route path="/">
+          <Route path="/admin" element={<AdminDash />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="products" element={<Products />} />
+          <Route path="/category" element={<Category />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/sign" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/details" element={<ProductDetails />} />
+          <Route path="/related" element={<RelatedItem />} />
+          <Route path="/flash" element={<FlashSales />} />
+        </Route>
       </Routes>
     </div>
   );
