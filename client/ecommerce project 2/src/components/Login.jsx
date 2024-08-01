@@ -2,7 +2,7 @@ import React from "react";
 
 function SignUp() {
   return (
-    <div className="w-full min-h-screen flex items-center justify-center gap-16 bg-white">
+    <div className="w-full  flex items-center justify-center gap-16 bg-white">
       {/* <div className="w-80 h-80 bg-red-600"></div> */}
       <img
         style={{ width: "600px", height: "450px" }}
@@ -25,6 +25,8 @@ function SignUp() {
          Log in
         </button>
       </div>
+      
+     
     </div>
   );
 }
