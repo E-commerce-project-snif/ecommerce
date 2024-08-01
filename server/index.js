@@ -6,6 +6,7 @@ const userRoutes = require("./router/userrouter"); // Adjust the path as needed
 const categoriesRoutes = require("./router/categoriesrouter");
 const productsRoutes = require("./router/productRouter");
 const cartRouter= require("./router/CartRouter")
+const wishlistRoutes = require('./router/wishlistrouter')
 
 
 const PORT = 3000;
@@ -17,6 +18,7 @@ app.use(cors());
 
 app.use("/products", productsRoutes);
 
+app.use('/wishlist', wishlistRoutes)
 
 app.use('/users', userRoutes);
 
