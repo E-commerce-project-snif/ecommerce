@@ -1,11 +1,10 @@
 import "./App.css";
 import NavBar from "./components/NavBar.jsx";
-import { Routes, Route, Link } from "react-router-dom";
 import SignUp from "./components/SingnUp.jsx";
 import Login from "./components/Login.jsx";
 import ProductDetails from "./components/ProductDetails.jsx";
 import RelatedItem from "./components/RelatedItem.jsx";
-// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Footer from "./components/Footer.jsx";
 import { useState } from "react";
@@ -30,7 +29,8 @@ function App() {
       >
         <NavBar />
       </div>
-
+      
+<Router>
       <Routes>
         <Route path="/">
           <Route path="/admin" element={<AdminDash />} />
@@ -45,6 +45,7 @@ function App() {
           <Route path="/flash" element={<FlashSales />} />
         </Route>
       </Routes>
+      </Router>
     </div>
   );
 }
