@@ -8,6 +8,7 @@ import Category from './components/Category.jsx'
 import HomeDashboard from './components/HomeDashboard.jsx';
 import Products from './components/Products.jsx';
 import Users from './components/Users.jsx';
+import Contact from './components/Contact.jsx';
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/users" element={<Users />} />
           <Route path="products" element={<Products />} />
           <Route path="/category" element={<Category />} />
+          <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>

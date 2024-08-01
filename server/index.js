@@ -3,6 +3,7 @@ const cors = require("cors");
 const {sequelize} = require('./database/index')
 const userRoutes = require('./router/userrouter'); // Adjust the path as needed
 const categoriesRoutes = require('./router/categoriesrouter'); 
+const wishlistRoutes = require('./router/wishlistrouter')
 
 const PORT = 3000;
 const app = express();
@@ -15,6 +16,8 @@ app.use(cors());
 app.use('/users', userRoutes);
 
 app.use('/categories', categoriesRoutes);
+
+app.use('/wishlist', wishlistRoutes)
 
 
 app.get("/", (req, res) => {
