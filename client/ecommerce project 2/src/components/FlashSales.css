@@ -1,0 +1,13 @@
+.icon__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon__sales {
+  position: relative;
+}
+
+.img__sales {
+  width: 100px;
+  height: 100px;
+}
