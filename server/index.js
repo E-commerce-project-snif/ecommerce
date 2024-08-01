@@ -1,10 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+
 const { sequelize } = require("./database/index");
 const userRoutes = require("./router/userrouter"); // Adjust the path as needed
 const categoriesRoutes = require("./router/categoriesrouter");
 const productsRoutes = require("./router/productRouter");
 const cartRouter= require("./router/CartRouter")
+
 
 const PORT = 3000;
 const app = express();
@@ -12,12 +14,13 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.use("/users", userRoutes);
 
-app.use("/categories", categoriesRoutes);
 app.use("/products", productsRoutes);
+
+
 app.use('/users', userRoutes);
 app.use('/carts',cartRouter)
+
 
 app.get("/", (req, res) => {
   res.send("Hello from the server!");
