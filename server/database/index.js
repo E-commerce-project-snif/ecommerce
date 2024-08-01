@@ -52,8 +52,25 @@ const Product = sequelize.define('Product', {
         allowNull: false
     },
     images: {
-        type: DataTypes.JSON,
-        allowNull: true
+        type: DataTypes.JSON, // Store an array of image URLs or paths
+        allowNull: true,
+        validate: {
+            isArrayOfImages(value) {
+                if (Array.isArray(value)) {
+                    if (value.length > 4) {
+                        throw new Error('You can only upload up to 4 images.');
+                    }
+                    value.forEach(url => {
+                        if (typeof url !== 'string') {
+                            throw new Error('Each image URL must be a string.');
+                        }
+                        // Additional validation for URL format could be added here
+                    });
+                } else {
+                    throw new Error('Images must be an array.');
+                }
+            }
+        }
     },
     price: {
         type: DataTypes.FLOAT,
@@ -62,10 +79,6 @@ const Product = sequelize.define('Product', {
     availability: {
         type: DataTypes.BOOLEAN,
         defaultValue: true
-    },
-    favoris: {
-        type: DataTypes.INTEGER,
-        defaultValue: 0
     },
     userId: {
         type: DataTypes.INTEGER,
