@@ -10,12 +10,12 @@ import Home from "./components/Home.jsx";
 import Footer from "./components/Footer.jsx";
 import { useState } from "react";
 import AdminDash from "./components/AdminDash.jsx";
-import Category from "./components/Category.jsx";
-import HomeDashboard from "./components/HomeDashboard.jsx";
+// import HomeDashboard from "./components/HomeDashboard.jsx";
 import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
 import Contact from './components/Contact.jsx';
+import Category from './components/Categories.jsx'
 import NotFound from "./components/NotFound.jsx";
 import Cart from "./components/Cart.jsx";
 import NewArrival from "./components/NewArrival.jsx";
