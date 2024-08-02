@@ -16,6 +16,10 @@ import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
 import Contact from './components/Contact.jsx';
+import NotFound from "./components/NotFound.jsx";
+import Cart from "./components/Cart.jsx";
+import NewArrival from "./components/NewArrival.jsx";
+
 import MyAccount from "./components/MyAccount.jsx";
 
 function App() {
@@ -34,7 +38,7 @@ function App() {
         <NavBar />
       </div>
 
-<Router>
+      <Router>
       <Routes>
         <Route path="/">
           <Route path="/admin" element={<AdminDash />} />
@@ -48,6 +52,9 @@ function App() {
           <Route path="/related" element={<RelatedItem />} />
           <Route path="/flash" element={<FlashSales />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/notfound" element={<NotFound />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/new" element={<NewArrival />} />
           <Route path="/myAccount" element={<MyAccount />} />
         </Route>
       </Routes>

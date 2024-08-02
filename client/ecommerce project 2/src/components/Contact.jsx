@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Contact.css';
 
+
 const Contact = () => {
+const [name,setname]=useState('');
+
+
+
   return (
     <div className="contact-container">
       <div className="contact-info">
@@ -27,12 +32,12 @@ const Contact = () => {
 
       <div className="contact-form">
         <form>
-            <div>
+            <div style={{display: 'flex', gap: '8px'}}>
           <input type="text" placeholder="Your Name" required style={   { backgroundColor : '#f5f5f5'}}/>
           <input type="email" placeholder="Your Email" required  style={   { backgroundColor : '#f5f5f5'}}/>
           <input type="tel" placeholder="Your Phone" required  style={   { backgroundColor : '#f5f5f5'}}/>
           </div>
-          <textarea placeholder="Your Message" style={   { backgroundColor : '#f5f5f5'}}></textarea>
+          <textarea placeholder="Your Message" style={   { backgroundColor : '#f5f5f5' ,height: '200px'}}></textarea>
           <button type="submit">Send Message</button>
         </form>
       </div>
