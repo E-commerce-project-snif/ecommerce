@@ -21,9 +21,6 @@ app.use("/products", productsRoutes);
 app.use('/wishlist', wishlistRoutes)
 
 app.use('/users', userRoutes);
-
-app.use('/categories', categoriesRoutes);
-
 app.use('/carts',cartRouter)
 
 

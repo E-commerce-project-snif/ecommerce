@@ -1,0 +1,17 @@
+.Home__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  margin-top: 150px;
+}
+.btn__home {
+  height: 50px;
+  background-color: black;
+  color: white;
+}
+.btn__home:hover {
+  background-color: grey;
+}
+.img_swipe_exclsive {
+  margin-top: 50px;
+}

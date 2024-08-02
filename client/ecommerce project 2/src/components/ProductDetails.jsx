@@ -615,7 +615,8 @@ function ProductDetails() {
                          
                         /> */}
                         <button
-                          className="bg-red-600 text-white text-base p-2"
+                          className="bg-red
+                          -600 text-white text-base p-2"
                           style={{
                             padding: "0px 11px",
                             color: "white",
@@ -623,7 +624,7 @@ function ProductDetails() {
                             border: "1px solid color: grey",
                             position: "absolute",
                             height: "44px",
-                            // backgroundColor: "red",
+                            backgroundColor: "#db4444",
                             marginLeft: "100px",
                             width: "40px",
                             fontSize: "xx-large",
@@ -747,7 +748,7 @@ function ProductDetails() {
                           padding: "0px 0px 0px 7px",
                         }}
                       >
-                        <buton
+                        <button
                           className="bg-red-600 text-white text-base p-2 "
                           style={{
                             width: "165px",
@@ -755,9 +756,8 @@ function ProductDetails() {
                             textAlign: "center",
                           }}
                         >
-                          {" "}
                           Buy now
-                        </buton>
+                        </button>
                       </div>
                     </div>
                   </div>

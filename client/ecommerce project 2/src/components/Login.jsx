@@ -42,7 +42,7 @@ function SignUp() {
       <div className="flex flex-col w-60 gap-5">
         <h3 className="font-medium text-2xl">Create an account</h3>
         <span className="font-small">Enter your detail below</span>
-        
+
         <input
           placeholder="Email or phone number"
           className="w-70 h-70 border-b-2 border-grey outline-none"
