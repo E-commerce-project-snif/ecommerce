@@ -20,10 +20,12 @@ import NotFound from "./components/NotFound.jsx";
 import Cart from "./components/Cart.jsx";
 import NewArrival from "./components/NewArrival.jsx";
 
+import MyAccount from "./components/MyAccount.jsx";
 
 function App() {
   return (
     <div>
+
       <div
         className="navbar"
         // style={{
@@ -53,10 +55,12 @@ function App() {
           <Route path="/notfound" element={<NotFound />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/new" element={<NewArrival />} />
+          <Route path="/myAccount" element={<MyAccount />} />
         </Route>
       </Routes>
       </Router>
     </div>
   );
+
 }
 export default App
