@@ -44,8 +44,19 @@ const createUser = async (req, res) => {
             password: hashedPassword,
             type
         });
+        
+        const token = jwt.sign({ id: newUser.id, type: newUser.type }, JWT_SECRET, { expiresIn: '1h' });
 
-        res.status(201).json({ message: 'User created successfully', user: newUser });
+        res.status(201).json({
+            message: 'User created successfully',
+            token,  // Include token in the response
+            user: {
+                id: newUser.id,
+                name: newUser.name,
+                mail: newUser.mail,
+                type: newUser.type
+            }
+        });
     } catch (error) {
         console.error('Error creating user:', error);
         res.status(500).json({ message: 'Internal server error' });
@@ -92,6 +103,21 @@ const loginUser = async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 };
+
+
+const getall = async (req, res) => {
+  try {
+    const users = await User.findAll(); // Fetch all users from the database
+    res.json(users); // Send users as JSON response
+  } catch (error) {
+    console.error('Error fetching users:', error);
+    res.status(500).json({ message: 'Internal Server Error' }); // Send error response
+  }
+};
+
+
+
+
 
 // Get users by type
 const getByType = async (req, res) => {
@@ -224,5 +250,6 @@ module.exports = {
     getClients,
     getSellers,
     deleteUser,
-    updateUser
+    updateUser,
+    getall
 };
