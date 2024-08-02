@@ -7,7 +7,7 @@ import ProductDetails from "./components/ProductDetails.jsx";
 import RelatedItem from "./components/RelatedItem.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
-import Footer from "./components/Footer.jsx";
+
 import { useState } from "react";
 import AdminDash from "./components/AdminDash.jsx";
 import Category from "./components/Category.jsx";
@@ -17,6 +17,8 @@ import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
 import Contact from './components/Contact.jsx';
 import MyAccount from "./components/MyAccount.jsx";
+import About from "./components/About.jsx"
+
 
 function App() {
   return (
@@ -49,6 +51,8 @@ function App() {
           <Route path="/flash" element={<FlashSales />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/myAccount" element={<MyAccount />} />
+          <Route path="/about" element={<About />} />
+
         </Route>
       </Routes>
       </Router>
