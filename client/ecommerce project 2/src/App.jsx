@@ -17,7 +17,11 @@ import FlashSales from "./components/FlashSales.jsx";
 import Exclusive from "./components/Exclusive.jsx";
 import ProductFlashSales from "./components/ProductFlashSales.jsx";
 import ClientHome from "./components/ClientHome.jsx";
-
+import Contact from './components/Contact.jsx';
+import Category from './components/Categories.jsx'
+import NotFound from "./components/NotFound.jsx";
+import Cart from "./components/Cart.jsx";
+import NewArrival from "./components/NewArrival.jsx";
 function App() {
   return (
     <div>
@@ -49,6 +53,11 @@ function App() {
             <Route path="/flash" element={<FlashSales />} />
             <Route path="/exclusive" element={<Exclusive />} />
             <Route path="/clienthome" element={<ClientHome />} />
+            <Route path="/contact" element={<Contact />} />
+          <Route path="/notfound" element={<NotFound />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/new" element={<NewArrival />} />
+          <Route path="/myAccount" element={<MyAccount />} />
 
             <Route path="/productsales" element={<ProductFlashSales />} />
           </Route>

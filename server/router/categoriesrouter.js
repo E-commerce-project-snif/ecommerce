@@ -10,4 +10,6 @@ router.post('/addcat', categoriesController.addCategory);
 // Update an existing category
 router.put('/update/:id', categoriesController.updateCategory);
 
+router.get('/getcat',categoriesController.getAllCategories)
+
 module.exports = router;
