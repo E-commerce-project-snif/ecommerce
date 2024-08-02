@@ -1,45 +1,4 @@
 
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import './App.css'
-// import AdminDash from './components/AdminDash.jsx';
-// import Category from './components/Category.jsx'
-// import HomeDashboard from './components/HomeDashboard.jsx';
-// import Products from './components/Products.jsx';
-// import Users from './components/Users.jsx';
-// import Contact from './components/Contact.jsx';
-
-
-
-
-// function App() {
-  
-
-//   return (
-//     <>
-//      <BrowserRouter>
-//       <Routes>
-//         <Route path="/" >
-//           <Route path='/admin' element={<AdminDash />} />
-//           <Route path="/users" element={<Users />} />
-//           <Route path="products" element={<Products />} />
-//           <Route path="/category" element={<Category />} />
-//           <Route path="/contact" element={<Contact />} />
-//         </Route>
-//       </Routes>
-//     </BrowserRouter>
-//     </>
-//   )
-// }
-
-
-
-
-
-
-
 import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import SignUp from "./components/SingnUp.jsx";
@@ -57,6 +16,10 @@ import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
 import Contact from './components/Contact.jsx';
+import NotFound from "./components/NotFound.jsx";
+import Cart from "./components/Cart.jsx";
+import NewArrival from "./components/NewArrival.jsx";
+
 
 function App() {
   return (
@@ -73,7 +36,7 @@ function App() {
         <NavBar />
       </div>
 
-<Router>
+      <Router>
       <Routes>
         <Route path="/">
           <Route path="/admin" element={<AdminDash />} />
@@ -87,6 +50,9 @@ function App() {
           <Route path="/related" element={<RelatedItem />} />
           <Route path="/flash" element={<FlashSales />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/notfound" element={<NotFound />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/new" element={<NewArrival />} />
         </Route>
       </Routes>
       </Router>
