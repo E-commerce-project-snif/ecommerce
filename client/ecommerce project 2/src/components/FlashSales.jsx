@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
 import ps5 from "../assets/ps5.png";
+
+import "./FlashSales.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons"; // For solid icons
+import { faHeart } from "@fortawesome/free-solid-svg-icons"; 
 import { faEye } from "@fortawesome/free-solid-svg-icons";
+import mob from "../assets/mob.jpeg";
+import mobile from "../assets/mobilePhone.png";
 const FlashSales = () => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
@@ -31,27 +35,107 @@ const FlashSales = () => {
 
   return (
     <div className="flash__sales__container">
-      <div className="header__sales flex items-center mb-4 ">
-        <div className="red_mark__sales w-4 h-8 bg-red-500 m-2 "></div>
-        <p className="today__sales text-center text-xl font-semibold">
-          Today's
-        </p>
+      
+      <div className="header__sales">
+        <div className="red_mark__sales"></div>
+        <p className="today__sales ">Today's</p>
       </div>
-      <div className="timer__sales flex items-end gap-3.5 font-medium ">
-        <h3 className="text-3xl">Flash Sales</h3>
-        <p>{formatDateTime(currentDateTime)}</p>
+      <div className="timer__sales  ">
+        <h3 className="flash__sales">Flash Sales</h3>
+        <p className="Date__sales">{formatDateTime(currentDateTime)}</p>
       </div>
+      {/* first product*/}
+      <div className="all__products__sales">
+        <div className="second__sales__container">
+          <div className="icon__sales ">
+            <div className="image__pourcentage__sales">
+              <div className="poucentage__sales">-40%</div>
+              <img className="img__sales" src={ps5} />
+              <div className="icons">
+                <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
+                {/* <i className="fas fa-eye "></i> */}
+                <FontAwesomeIcon icon={faEye} className="icon__eye" />
+              </div>
+            </div>
+          </div>
+          <div className="detail__sales">
+            <span className="HAVIT__sales">HAVIT HV-G92 Gamepad</span>
+            <span className="price__details">120$</span>
+            <div className="allStars">
+              <span className="star">⭐⭐⭐</span>
+              <p className="grey__star">⭐</p>
+            </div>
+          </div>
+        </div>
 
-      <div className="icon__sales flex flex-col content-end">
-        <div className="icon__heart text-gray-400  h-6 gap-10">
-          <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
-          {/* <i className="fas fa-eye "></i> */}
-          <FontAwesomeIcon icon={faEye} className="text-gray-400 h-6" />
+        {/* second product */}
+        <div className="second__sales__container">
+          <div className="icon__sales ">
+            <div className="image__pourcentage__sales">
+              <div className="poucentage__sales">-40%</div>
+              <img className="img__sales" src={mob} />
+              <div className="icons">
+                <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
+
+                <FontAwesomeIcon icon={faEye} className="icon__eye" />
+              </div>
+            </div>
+          </div>
+          <div className="detail__sales">
+            <span className="HAVIT__sales">HAVIT HV-G92 Gamepad</span>
+            <span className="price__details">120$</span>
+            <div className="allStars">
+              <span className="star">⭐⭐⭐</span>
+              <p className="grey__star">⭐</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <img className="h-40" src={ps5} />
+        {/* third product */}
+        <div className="second__sales__container">
+          <div className="icon__sales ">
+            <div className="image__pourcentage__sales">
+              <div className="poucentage__sales">-40%</div>
+              <img className="img__sales" src={ps5} />
+              <div className="icons">
+                <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
+
+                <FontAwesomeIcon icon={faEye} className="icon__eye" />
+              </div>
+            </div>
+          </div>
+          <div className="detail__sales">
+            <span className="HAVIT__sales">HAVIT HV-G92 Gamepad</span>
+            <span className="price__details">120$</span>
+            <div className="allStars">
+              <span className="star">⭐⭐⭐</span>
+              <p className="grey__star">⭐</p>
+            </div>
+          </div>
+        </div>
+        {/* forth product */}
+        <div className="second__sales__container">
+          <div className="icon__sales ">
+            <div className="image__pourcentage__sales">
+              <div className="poucentage__sales">-40%</div>
+              <img className="img__sales" src={ps5} />
+              <div className="icons">
+                <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
+
+                <FontAwesomeIcon icon={faEye} className="icon__eye" />
+              </div>
+            </div>
+          </div>
+          <div className="detail__sales">
+            <span className="HAVIT__sales">HAVIT HV-G92 Gamepad</span>
+            <span className="price__details">120$</span>
+            <div className="allStars">
+              <span className="star">⭐⭐⭐</span>
+              <p className="grey__star">⭐</p>
+            </div>
+          </div>
         </div>
       </div>
+      <button className="btn__sales">View All Products</button>
     </div>
   );
 };

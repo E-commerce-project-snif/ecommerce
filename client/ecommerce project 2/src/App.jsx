@@ -14,11 +14,14 @@ import HomeDashboard from "./components/HomeDashboard.jsx";
 import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
+import Exclusive from "./components/Exclusive.jsx";
+import ProductFlashSales from "./components/ProductFlashSales.jsx";
+import ClientHome from "./components/ClientHome.jsx";
 
 function App() {
   return (
     <div>
-      <div
+      {/* <div
         className="navbar"
         style={{
           position: "-webkit-sticky",
@@ -27,24 +30,29 @@ function App() {
           width: "100%",
         }}
       >
-        <NavBar />
-      </div>
-      
-<Router>
-      <Routes>
-        <Route path="/">
-          <Route path="/admin" element={<AdminDash />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="products" element={<Products />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/sign" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/details" element={<ProductDetails />} />
-          <Route path="/related" element={<RelatedItem />} />
-          <Route path="/flash" element={<FlashSales />} />
-        </Route>
-      </Routes>
+       
+      </div> */}
+      <NavBar />
+
+      <Router>
+        <Routes>
+          <Route path="/">
+            <Route path="/admin" element={<AdminDash />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="products" element={<Products />} />
+            <Route path="/category" element={<Category />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/sign" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/details" element={<ProductDetails />} />
+            <Route path="/related" element={<RelatedItem />} />
+            <Route path="/flash" element={<FlashSales />} />
+            <Route path="/exclusive" element={<Exclusive />} />
+            <Route path="/clienthome" element={<ClientHome />} />
+
+            <Route path="/productsales" element={<ProductFlashSales />} />
+          </Route>
+        </Routes>
       </Router>
     </div>
   );
