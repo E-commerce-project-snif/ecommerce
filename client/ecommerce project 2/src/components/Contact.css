@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    justify-content: space-around;
   }
   
   .contact-info {
@@ -31,10 +32,10 @@
     margin: 5px 0;
   }
   
-  .contact-form {
-    width: 55%;
+  /* .contact-form {
+    
   }
-  
+   */
   .contact-form form {
     display: flex;
     flex-direction: column;
