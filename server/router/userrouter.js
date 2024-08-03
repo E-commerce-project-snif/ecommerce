@@ -10,6 +10,8 @@ router.get('/getclients', userController.getClients);
 router.get('/getsellers', userController.getSellers);
 router.delete('/delete/:id', userController.deleteUser);
 router.put('/update/:id', userController.updateUser);
+router.get('/getall', userController.getall);
+
 
 
 

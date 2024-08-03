@@ -1,4 +1,3 @@
-
 import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import SignUp from "./components/SingnUp.jsx";
@@ -15,7 +14,14 @@ import HomeDashboard from "./components/HomeDashboard.jsx";
 import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
+import Exclusive from "./components/Exclusive.jsx";
+import ProductFlashSales from "./components/ProductFlashSales.jsx";
+import ClientHome from "./components/ClientHome.jsx";
 import Contact from './components/Contact.jsx';
+import Category from './components/Categories.jsx'
+import NotFound from "./components/NotFound.jsx";
+import Cart from "./components/Cart.jsx";
+import NewArrival from "./components/NewArrival.jsx";
 import MyAccount from "./components/MyAccount.jsx";
 import About from "./components/About.jsx"
 
@@ -23,41 +29,46 @@ import About from "./components/About.jsx"
 function App() {
   return (
     <div>
-
-      <div
+      {/* <div
         className="navbar"
-        // style={{
-        //   position: "-webkit-sticky",
-        //   position: "sticky",
-        //   top: "0px",
-        //   width: "100%",
-        // }}
+        style={{
+          position: "-webkit-sticky",
+          position: "sticky",
+          top: "0px",
+          width: "100%",
+        }}
       >
-        <NavBar />
-      </div>
+       
+      </div> */}
+      <NavBar />
 
-<Router>
-      <Routes>
-        <Route path="/">
-          <Route path="/admin" element={<AdminDash />} />
-          <Route path="/users" element={<Users />} />
-          <Route path="products" element={<Products />} />
-          <Route path="/category" element={<Category />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/sign" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/details" element={<ProductDetails />} />
-          <Route path="/related" element={<RelatedItem />} />
-          <Route path="/flash" element={<FlashSales />} />
-          <Route path="/contact" element={<Contact />} />
+      <Router>
+        <Routes>
+          <Route path="/">
+            <Route path="/admin" element={<AdminDash />} />
+            <Route path="/users" element={<Users />} />
+            <Route path="products" element={<Products />} />
+            <Route path="/category" element={<Category />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/sign" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/details" element={<ProductDetails />} />
+            <Route path="/related" element={<RelatedItem />} />
+            <Route path="/flash" element={<FlashSales />} />
+            <Route path="/exclusive" element={<Exclusive />} />
+            <Route path="/clienthome" element={<ClientHome />} />
+            <Route path="/contact" element={<Contact />} />
+          <Route path="/notfound" element={<NotFound />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/new" element={<NewArrival />} />
           <Route path="/myAccount" element={<MyAccount />} />
-          <Route path="/about" element={<About />} />
 
-        </Route>
-      </Routes>
+            <Route path="/productsales" element={<ProductFlashSales />} />
+          </Route>
+        </Routes>
       </Router>
     </div>
   );
-
 }
-export default App
+
+export default App;

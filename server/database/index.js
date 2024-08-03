@@ -4,9 +4,7 @@ const bcrypt = require("bcrypt");
 
 // Create a Sequelize instance
 
-
 const sequelize = new Sequelize("commerce", "root", "root", {
-
   host: "localhost",
   dialect: "mysql",
 

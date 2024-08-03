@@ -1,7 +1,39 @@
-import React from "react";
+import React ,{useState}from "react";
 import gmail from "../assets/G.png";
+import axios from'axios'
 
 function SignUp() {
+const [usercheck,setusercheck]=useState(true)
+const [sellercheck,setsellercheck]=useState(false)
+const [name,setname]=useState('')
+const [mail,setmail]=useState('')
+const [password,setapassword]=useState('')
+
+
+console.log('usercheck',usercheck);
+console.log('sellercheck',sellercheck);
+
+
+const changeCheckbox=()=>{
+  setusercheck(!usercheck)  
+  setsellercheck(!sellercheck)
+}
+
+const handlesign = ()=>{
+  const newuser={
+    name:name,
+    mail:mail,
+    password:password,
+    type : usercheck ? 'client' : 'seller'
+  }
+  axios.post('http://127.0.0.1:3000/users/register',newuser)
+  .then((response)=>{
+console.log(response);
+console.log('success');
+  })
+  .catch((err)=>{console.log(err);})
+}
+
   return (
     <div className="w-full min-h-screen flex items-center justify-center gap-16 bg-white">
       {/* <div className="w-80 h-80 bg-red-600"></div> */}
@@ -16,16 +48,25 @@ function SignUp() {
         <input
           placeholder="Name"
           className="w-70 h-10 border-b-2 border-grey outline-none "
+          onChange={(e)=>{setname(e.target.value)}}
         />
         <input
           placeholder="Email or phone number"
           className="w-70 h-70 border-b-2 border-grey outline-none"
+          onChange={(e)=>{setmail(e.target.value)}}
         />
+        client
+        <input type="checkbox"  checked={usercheck} onChange={changeCheckbox}
+         />
+         seller
+          <input type="checkbox" checked={sellercheck} onChange={changeCheckbox}
+         />
         <input
           placeholder="Password"
           className="w-70 h-70 border-b-2 border-grey outline-none"
+          onChange={(e)=>{setapassword(e.target.value)}}
         />
-        <button className="bg-red-600 text-white text-base p-2">
+        <button className="bg-red-600 text-white text-base p-2" onClick={handlesign} >
           Create account
         </button>
         <div className="sign in flex ">
