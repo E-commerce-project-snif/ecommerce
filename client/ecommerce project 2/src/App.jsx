@@ -6,11 +6,8 @@ import ProductDetails from "./components/ProductDetails.jsx";
 import RelatedItem from "./components/RelatedItem.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
-import Footer from "./components/Footer.jsx";
-import { useState } from "react";
+// import Footer from "./components/Footer.jsx";
 import AdminDash from "./components/AdminDash.jsx";
-import Category from "./components/Category.jsx";
-import HomeDashboard from "./components/HomeDashboard.jsx";
 import Products from "./components/Products.jsx";
 import Users from "./components/Users.jsx";
 import FlashSales from "./components/FlashSales.jsx";
@@ -22,6 +19,11 @@ import Category from './components/Categories.jsx'
 import NotFound from "./components/NotFound.jsx";
 import Cart from "./components/Cart.jsx";
 import NewArrival from "./components/NewArrival.jsx";
+import MyAccount from "./components/MyAccount.jsx";
+
+
+
+
 function App() {
   return (
     <div>

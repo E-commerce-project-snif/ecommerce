@@ -5,7 +5,7 @@ const MyAccount = () => {
   return (
     <div className="profile-container">
       {/* Sidebar */}
-      <aside className="sidebar">
+      <aside className="sidebarr">
         <div className="logo">
           <a href="/" className="logo-text">Home / My Account</a>
         </div>
