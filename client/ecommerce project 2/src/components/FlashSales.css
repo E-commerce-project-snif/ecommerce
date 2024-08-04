@@ -24,9 +24,8 @@
   margin-left: 60px;
   gap: 25px;
   margin-bottom: 30px;
-  
 }
-.timer__sales{
+.timer__sales {
   margin-bottom: 40px;
 }
 .red_mark__sales {
@@ -38,7 +37,6 @@
 .today__sales {
   font-size: 20px;
   color: #db4444;
-  
 }
 .timer__sales {
   display: flex;
@@ -143,4 +141,5 @@
   margin-left: 750px;
   color: white;
   padding: 15px 10px;
+  width: 160px;
 }
