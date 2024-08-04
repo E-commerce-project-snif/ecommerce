@@ -2,18 +2,23 @@ import React, { useEffect, useState } from "react";
 import { getAllProduct } from "../services/productService";
 import Exclusive from "./Exclusive";
 import FlashSales from "./FlashSales";
+import { useNavigate } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faEye, faMobileScreenButton } from "@fortawesome/free-solid-svg-icons";
-import { faDesktop } from "@fortawesome/free-solid-svg-icons";
-// import { faWatchSmart } from '@fortawesome/free-solid-svg-icons'
-// import { faUser, faPhone } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEye,
+  faMobileScreenButton,
+  faFootballBall,
+  faTshirt,
+} from "@fortawesome/free-solid-svg-icons";
+
 import "./Home.css";
 
 function Home() {
   const [products, setProducts] = useState([]);
   const [visibleCount, setVisibleCount] = useState(6);
+  const navigate = useNavigate();
   useEffect(() => {
     getAllProduct()
       .then((res) => {
@@ -24,9 +29,15 @@ function Home() {
         console.log(err);
       });
   }, []);
+
   const showMore = () => {
     setVisibleCount((prevCount) => prevCount + 6);
   };
+
+  const handleClickElec = () => {
+    navigate("/electronics");
+  };
+
   return (
     <div>
       <div>
@@ -44,36 +55,37 @@ function Home() {
         <div className="categories__product__home ">Browse By Category</div>
         <div className="all__icon__home">
           {/* 1st icon */}
-          <div className="icon__home__container">
+          <div className="icon__home__container" onClick={handleClickElec}>
             <FontAwesomeIcon
               icon={faMobileScreenButton}
               className="icon-with-border icon__phone"
             />
-            <p className="phone">Phone</p>
+            <p className="phone">Electronics</p>
           </div>
           {/* 2nd icon */}
           <div className="icon__home__container">
             <FontAwesomeIcon
-              icon={faDesktop}
-              className="icon-with-border icon__pc "
+              icon={faFootballBall}
+              className="icon-with-border icon__sports"
             />
-            <p className="phone">PC</p>
+            <p className="phone">Sports</p>
           </div>
+
           {/* 3nd icon */}
           <div className="icon__home__container">
             <FontAwesomeIcon
-              icon={faDesktop}
-              className="icon-with-border icon__pc "
+              icon={faHeart}
+              className="icon-with-border icon__beauty"
             />
-            <p className="phone">PC</p>
+            <p className="phone">Beauty</p>
           </div>
           {/* 4nd icon */}
           <div className="icon__home__container">
             <FontAwesomeIcon
-              icon={faDesktop}
-              className="icon-with-border icon__pc "
+              icon={faTshirt}
+              className="icon-with-border icon__fashion"
             />
-            <p className="phone">PC</p>
+            <p className="phone">Fashion</p>
           </div>
         </div>
       </div>
@@ -90,7 +102,7 @@ function Home() {
             <div className="icon__sales ">
               <div className="image__pourcentage__sales">
                 <div className="poucentage__sales">-40%</div>
-                <img className="img__sales" src={product.images} />
+                <img className="img__sales" src={product.images[0]} />
                 <div className="icons">
                   <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
                   <FontAwesomeIcon icon={faEye} className="icon__eye" />
@@ -112,7 +124,11 @@ function Home() {
         ))}
       </div>
       {products.length > visibleCount && (
-        <button onClick={showMore} className="btn__showMore">
+        <button
+          onClick={showMore}
+          className="btn__showMore"
+          style={{ marginBottom: "30px" }}
+        >
           Show More
         </button>
       )}

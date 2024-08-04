@@ -92,10 +92,27 @@
 .icon__pc {
   font-size: 40px;
 }
+/* .icon__pc:hover {
+  color: white;
+} */
 .all__icon__home {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 40px;
   gap: 40px;
+}
+.icon__home__container:hover {
+  transition: background-color 0.3s, color 0.3s;
+}
+.icon__home__container:hover {
+  background-color: #db4444;
+}
+.icon__home__container:hover .icon-with-border,
+.phone {
+  color: white;
+}
+.icon-with-border {
+  font-size: 40px;
+  transition: color 0.3s; /* Smooth transition for color change */
 }

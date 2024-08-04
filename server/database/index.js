@@ -4,10 +4,9 @@ const bcrypt = require("bcrypt");
 
 // Create a Sequelize instance
 
-const sequelize = new Sequelize("commerce", "fourat", "Liverpool1892", {
+const sequelize = new Sequelize("commerce", "root", "root", {
   host: "localhost",
   dialect: "mysql",
-
 });
 
 // Define the User model
@@ -60,25 +59,25 @@ const Product = sequelize.define(
       allowNull: false,
     },
     images: {
-        type: DataTypes.JSON, // Store an array of image URLs or paths
-        allowNull: true,
-        validate: {
-            isArrayOfImages(value) {
-                if (Array.isArray(value)) {
-                    if (value.length > 4) {
-                        throw new Error('You can only upload up to 4 images.');
-                    }
-                    value.forEach(url => {
-                        if (typeof url !== 'string') {
-                            throw new Error('Each image URL must be a string.');
-                        }
-                        // Additional validation for URL format could be added here
-                    });
-                } else {
-                    throw new Error('Images must be an array.');
-                }
+      type: DataTypes.JSON, // Store an array of image URLs or paths
+      allowNull: true,
+      validate: {
+        isArrayOfImages(value) {
+          if (Array.isArray(value)) {
+            if (value.length > 4) {
+              throw new Error("You can only upload up to 4 images.");
             }
-        }
+            value.forEach((url) => {
+              if (typeof url !== "string") {
+                throw new Error("Each image URL must be a string.");
+              }
+              // Additional validation for URL format could be added here
+            });
+          } else {
+            throw new Error("Images must be an array.");
+          }
+        },
+      },
     },
     price: {
       type: DataTypes.FLOAT,
@@ -87,6 +86,16 @@ const Product = sequelize.define(
     availability: {
       type: DataTypes.BOOLEAN,
       defaultValue: true,
+    },
+    categoryId: {
+      type: DataTypes.INTEGER,
+
+      allowNull: true,
+      defaultValue: 1,
+      references: {
+        model: "categories",
+        key: "id",
+      },
     },
     userId: {
       type: DataTypes.INTEGER,
@@ -202,6 +211,7 @@ const Category = sequelize.define(
 
 // Set up associations
 User.hasMany(Product, { foreignKey: "userId" });
+
 User.hasMany(Wishlist, { foreignKey: "userId" });
 User.hasMany(Cart, { foreignKey: "userId" });
 
@@ -210,6 +220,7 @@ Product.hasMany(Cart, { foreignKey: "productId" });
 Product.hasMany(Wishlist, { foreignKey: "productId" });
 
 Cart.belongsTo(User, { foreignKey: "userId" });
+Product.belongsTo(Category, { foreignKey: "categoryId" }); // add by shady
 Cart.belongsTo(Product, { foreignKey: "productId" });
 
 Wishlist.belongsTo(User, { foreignKey: "userId" });
@@ -309,4 +320,3 @@ module.exports = {
 // .catch((err)=>{console.log(err)})
 
 // module.exports = sequelize;
-

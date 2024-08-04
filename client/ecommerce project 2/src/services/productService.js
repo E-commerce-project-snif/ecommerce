@@ -15,8 +15,10 @@ export const getAllProduct = async () => {
 
 export const addProducts = async (
   productname,
+  description,
   images,
   price,
+  categoryId,
   availability,
   favoris,
   userId
@@ -24,11 +26,13 @@ export const addProducts = async (
   return axios
     .post("http://localhost:3000/products/add", {
       productname,
+      description,
       images,
       price,
+      categoryId,
       availability,
       favoris,
-      userId,
+      userId
     })
     .then((res) => {
       return res.data;
@@ -66,6 +70,18 @@ export const updateProduct = async (
       availability,
       favoris,
     })
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
+};
+
+export const getProductsByUserId = async (id) => {
+  return axios
+    .get(`http://localhost:3000/products/user/${id}`)
     .then((res) => {
       return res.data;
     })
