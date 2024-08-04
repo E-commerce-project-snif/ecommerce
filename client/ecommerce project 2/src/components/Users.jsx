@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./users.css";
@@ -47,6 +48,53 @@ const Users = () => {
   const handlebackclick = () => {
     navigate("/admin");
   };
+
+import React,{useEffect, useState} from "react";
+import axios from 'axios';
+import './Users.css'
+import { useNavigate } from 'react-router-dom';
+
+
+
+
+
+const Users = ()=>{
+const [users,setusers]=useState([])
+const [ref,setref]=useState(false)
+const [upuser,setuser]=useState('')
+
+const navigate = useNavigate();
+
+
+useEffect(()=>{
+  axios.get('http://127.0.0.1:3000/users/getall')
+.then((response)=>{
+  setusers(response.data)
+}).catch((err)=>{log(err)})
+},[ref])
+
+  
+const deleteuser = (id)=>{
+  axios.delete(`http://127.0.0.1:3000/users/delete/${id}`)
+  .then(()=>{
+    setref(!ref)
+  }).catch((err)=>{console.log(err);})
+}
+
+const updateuser = (id)=>{
+  const newuser = { type : upuser }
+  axios.put(`http://127.0.0.1:3000/users/update/${id}`,newuser)
+  .then(()=>{
+    setref(!ref)
+  }).catch((err)=>{console.log(err);})
+}
+
+
+const handlebackclick=()=>{
+  navigate('/admin')
+}
+
+
 
   return (
     <div>

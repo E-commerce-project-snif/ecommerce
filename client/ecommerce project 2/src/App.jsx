@@ -7,10 +7,14 @@ import RelatedItem from "./components/RelatedItem.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
 // import Footer from "./components/Footer.jsx";
+
 import { useState } from "react";
 import AdminDash from "./components/AdminDash.jsx";
 // import Category from "./components/Category.jsx";
 // import HomeDashboard from "./components/HomeDashboard.jsx";
+
+import AdminDash from "./components/AdminDash.jsx";
+
 import Products from "./components/Products.jsx";
 import MyAccount from "./components/MyAccount.jsx";
 import Users from "./components/Users.jsx";
@@ -24,8 +28,16 @@ import Category from "./components/Categories.jsx";
 import NotFound from "./components/NotFound.jsx";
 import Cart from "./components/Cart.jsx";
 import NewArrival from "./components/NewArrival.jsx";
+
 import SellerAddProd from "./components/SellerAddProd.jsx";
 import ElectonicsPage from "./components/ElectronicsPage.jsx";
+
+import MyAccount from "./components/MyAccount.jsx";
+
+
+
+
+
 function App() {
   return (
     <div>

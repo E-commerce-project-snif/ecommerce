@@ -47,10 +47,14 @@ app.use(cors());
 
 app.use("/products", productsRoutes);
 
-app.use("/wishlist", wishlistRoutes);
-app.use("/categories", categoriesRoutes);
-app.use("/users", userRoutes);
-app.use("/carts", cartRouter);
+
+
+app.use('/wishlist', wishlistRoutes)
+app.use('/categories',categoriesRoutes)
+app.use('/users', userRoutes);
+app.use('/carts',cartRouter)
+
+
 
 app.get("/", (req, res) => {
   res.send("Hello from the server!");
