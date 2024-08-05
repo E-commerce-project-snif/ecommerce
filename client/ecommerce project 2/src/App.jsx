@@ -33,7 +33,10 @@ import SellerAddProd from "./components/SellerAddProd.jsx";
 import ElectonicsPage from "./components/ElectronicsPage.jsx";
 
 import MyAccount from "./components/MyAccount.jsx";
-
+import Wishlist from "./components/Wishlist.jsx";
+import  Chart  from "./components/Chart.jsx";
+import SalesChart from "./components/Saleschart.jsx";
+import Profilesettings from "./components/Profilesettings.jsx";
 
 
 
@@ -63,9 +66,16 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/new" element={<NewArrival />} />
             <Route path="/myAccount" element={<MyAccount />} />
+
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/chart" element={<Chart />} />
+          <Route path="/saleschart" element={<SalesChart />} />
+            <Route path="/settings" element={<Profilesettings />} />
+
             <Route path="/seller" element={<SellerAddProd />} />
             <Route path="/productsales" element={<ProductFlashSales />} />
             <Route path="/electronics" element={<ElectonicsPage />} />
+
           </Route>
         </Routes>
       </Router>

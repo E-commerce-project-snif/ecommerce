@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdminDash.css'
 // import  Chartt  from './Chartt.jsx';
+import Chart from './Chart.jsx'
+import SalesChart from './Saleschart.jsx';
 
 
 function AdminDash() {
@@ -22,6 +24,8 @@ const handlelogout = () =>{
         <nav>
           <ul>
             <li><a href="#" onClick={()=>{navigate("/admin",rows={data})}}>Dashboard</a></li>
+            <li><a href="#" onClick={()=>{navigate("/chart")}}>Users Stats </a></li>
+            <li><a href="#" onClick={()=>{navigate("/saleschart")}}>Sales Stats </a></li>
             <li><a href="#" onClick={()=>{navigate("/users")}}>Users</a></li>
             <li><a href="#" onClick={()=>{navigateproduct("/products")}}>Products</a></li>
             <li><a href="#" onClick={()=>{navigate("/category")}}>Category</a></li>
@@ -56,8 +60,9 @@ const handlelogout = () =>{
       </main>
       <div className='graph'>
          <img src="https://www.hubspot.com/hs-fs/hubfs/how-many-visitors-should-your-site-get_6.webp?width=650&height=402&name=how-many-visitors-should-your-site-get_6.webp" alt="stats" />
-      
+       
       </div>
+      
       <div>
         
       </div>

@@ -38,7 +38,7 @@ function Home() {
                 <div className="poucentage__sales">-40%</div>
                 <img className="img__sales" src={product.images} />
                 <div className="icons">
-                  <FontAwesomeIcon icon={faHeart} className=" icon__heart " />
+                  <FontAwesomeIcon icon={faHeart} className=" icon__heart "  />
 
                   <FontAwesomeIcon icon={faEye} className="icon__eye" />
                 </div>
