@@ -5,13 +5,13 @@
 
 .sidebar__exclusive {
   display: flex;
+
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 25px;
-  margin-left: 100px;
+  margin-left: 80px;
   border-color: 1;
-  
 }
 .woman__fashion__exclusive {
   display: flex;

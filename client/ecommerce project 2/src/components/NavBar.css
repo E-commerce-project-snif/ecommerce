@@ -16,6 +16,15 @@
 .navbar__shopnow {
   font-weight: bold;
   text-decoration: underline;
+
+  margin-left: 50px;
+  font-size: 13px;
+  color: white;
+}
+.navbar__langage {
+  margin-left: 400px;
+  /* left: 10px; */
+
   margin-left: 250px;
   color: white;
   font-size :13px;
@@ -24,6 +33,7 @@
 .navbar__langage {
   margin-left: 400px;
   left: 10px;
+
   font-size: 13px;
   color: white;
 }

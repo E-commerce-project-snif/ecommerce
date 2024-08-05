@@ -28,6 +28,8 @@
 .second__hero__container {
   display: flex;
   gap: 20px;
+  align-items: start;
+  justify-content: center;
 }
 .icons__search__hero {
   display: flex;

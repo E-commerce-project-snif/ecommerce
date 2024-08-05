@@ -1,35 +1,39 @@
-import React ,{useState}from "react";
-import axios from'axios'
-import { useNavigate } from 'react-router-dom';
-
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function SignUp() {
-  const [mail,setmail]=useState('')
-  const [password,setapassword]=useState('')
+  const [mail, setmail] = useState("");
+  const [password, setapassword] = useState("");
   const navigate = useNavigate();
 
-
-  const handlelog =()=>{
-    const user = {mail : mail , password : password}
-    axios.post('http://127.0.0.1:3000/users/login',user)
-    .then((response)=>{
-      console.log(response);
-      console.log('success');
-      if(mail==='admin@gmail.com'){
-        navigate('/admin')
-        localStorage.setItem('token', response.data.token)
-        console.log(localStorage);
-      }
-      if(response.data.users.type==='client'){
-        localStorage.setItem('token', response.data.token)
-      }
-      else{
-        localStorage.setItem('token', response.data.token)
-      }
-    })
-    .catch((err)=>{console.log(err)})
-  }
-
+  const handlelog = () => {
+    const user = { mail: mail, password: password };
+    axios
+      .post("http://127.0.0.1:3000/users/login", user)
+      .then((response) => {
+        console.log(response);
+        console.log("success");
+        if (mail === "admin@gmail.com") {
+          navigate("/admin");
+          localStorage.setItem("token", response.data.token);
+          console.log(localStorage);
+        }
+        console.log(response.data);
+        if (response.data.user.type === "client") {  // line 23 user not users
+          localStorage.setItem("token", response.data.token);
+          navigate("/");  // navigate
+        } else {
+          localStorage.setItem("token", response.data.token);
+        
+        
+          navigate("/seller");  // navigate to seller page
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="w-full  flex items-center justify-center gap-16 bg-white">
@@ -46,20 +50,25 @@ function SignUp() {
         <input
           placeholder="Email or phone number"
           className="w-70 h-70 border-b-2 border-grey outline-none"
-          onChange={(e)=>{setmail(e.target.value)}}
+          onChange={(e) => {
+            setmail(e.target.value);
+          }}
         />
         <input
-        type = 'password'
+          type="password"
           placeholder="Password"
           className="w-70 h-70 border-b-2 border-grey outline-none"
-          onChange={(e)=>{setapassword(e.target.value)}}
+          onChange={(e) => {
+            setapassword(e.target.value);
+          }}
         />
-        <button className="bg-red-600 text-white text-base p-2"  onClick={handlelog}>
-         Log in
+        <button
+          className="bg-red-600 text-white text-base p-2"
+          onClick={handlelog}
+        >
+          Log in
         </button>
       </div>
-      
-     
     </div>
   );
 }

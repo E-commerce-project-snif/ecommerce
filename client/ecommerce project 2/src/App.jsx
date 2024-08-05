@@ -7,18 +7,31 @@ import RelatedItem from "./components/RelatedItem.jsx";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
 // import Footer from "./components/Footer.jsx";
+
+import { useState } from "react";
 import AdminDash from "./components/AdminDash.jsx";
+// import Category from "./components/Category.jsx";
+// import HomeDashboard from "./components/HomeDashboard.jsx";
+
+import AdminDash from "./components/AdminDash.jsx";
+
 import Products from "./components/Products.jsx";
+import MyAccount from "./components/MyAccount.jsx";
 import Users from "./components/Users.jsx";
+
 import FlashSales from "./components/FlashSales.jsx";
 import Exclusive from "./components/Exclusive.jsx";
 import ProductFlashSales from "./components/ProductFlashSales.jsx";
 import ClientHome from "./components/ClientHome.jsx";
-import Contact from './components/Contact.jsx';
-import Category from './components/Categories.jsx'
+import Contact from "./components/Contact.jsx";
+import Category from "./components/Categories.jsx";
 import NotFound from "./components/NotFound.jsx";
 import Cart from "./components/Cart.jsx";
 import NewArrival from "./components/NewArrival.jsx";
+
+import SellerAddProd from "./components/SellerAddProd.jsx";
+import ElectonicsPage from "./components/ElectronicsPage.jsx";
+
 import MyAccount from "./components/MyAccount.jsx";
 import Wishlist from "./components/Wishlist.jsx";
 import  Chart  from "./components/Chart.jsx";
@@ -27,20 +40,10 @@ import Profilesettings from "./components/Profilesettings.jsx";
 
 
 
+
 function App() {
   return (
     <div>
-      {/* <div
-        className="navbar"
-        style={{
-          position: "-webkit-sticky",
-          position: "sticky",
-          top: "0px",
-          width: "100%",
-        }}
-      >
-       
-      </div> */}
       <NavBar />
 
       <Router>
@@ -63,11 +66,16 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/new" element={<NewArrival />} />
             <Route path="/myAccount" element={<MyAccount />} />
+
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/chart" element={<Chart />} />
           <Route path="/saleschart" element={<SalesChart />} />
-            <Route path="/productsales" element={<ProductFlashSales />} />
             <Route path="/settings" element={<Profilesettings />} />
+
+            <Route path="/seller" element={<SellerAddProd />} />
+            <Route path="/productsales" element={<ProductFlashSales />} />
+            <Route path="/electronics" element={<ElectonicsPage />} />
+
           </Route>
         </Routes>
       </Router>
