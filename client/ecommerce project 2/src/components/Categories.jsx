@@ -50,7 +50,11 @@ const  add = ()=>{
     return(
         <div>
             <div>
-                <button style={{backgroundColor:'#E2B842' , position:'absolute',marginLeft:'40px', borderRadius:'10px' , width:'82px',border:'1px solid black'}} onClick={handlebackclick}>BACK</button>
+            <button class="cursor-pointer duration-200 hover:scale-125 active:scale-100" title="Go Back" onClick={()=>{navigate('/admin')}}>
+  <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 24 24" class="stroke-blue-300">
+    <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" d="M11 6L5 12M5 12L11 18M5 12H19"></path>
+  </svg>
+</button>
             </div>
              <div style={{marginTop:'20px' , marginLeft :'41%'}}>
             <input type="text"placeholder="Type To Add Category" onChange={(e)=>{setaddcat(e.target.value)}} />

@@ -5,9 +5,11 @@ import './Contact.css';
 
 const Contact = () => {
 const [name,setname]=useState('');
+const [email,setemail]=useState('');
+const [phone,setphone]=useState('');
+const [text,settext]=useState('');
 
-
-
+console.log(name,'tesst')
   return (
     <div className="contact-container">
       <div className="contact-info">
@@ -33,12 +35,12 @@ const [name,setname]=useState('');
       <div className="contact-form">
         <form>
             <div style={{display: 'flex', gap: '8px'}}>
-          <input type="text" placeholder="Your Name" required style={   { backgroundColor : '#f5f5f5'}}/>
-          <input type="email" placeholder="Your Email" required  style={   { backgroundColor : '#f5f5f5'}}/>
-          <input type="tel" placeholder="Your Phone" required  style={   { backgroundColor : '#f5f5f5'}}/>
+          <input type="text" placeholder="Your Name" required style={   { backgroundColor : '#f5f5f5'}} onChange={(e)=>{setname(e.target.value)}}/>
+          <input type="email" placeholder="Your Email" required  style={   { backgroundColor : '#f5f5f5'}} onChange={(e)=>{setemail(e.target.value)}}/>
+          <input type="tel" placeholder="Your Phone" required  style={   { backgroundColor : '#f5f5f5'}} onChange={(e)=>{setphone(e.target.value)}}/>
           </div>
-          <textarea placeholder="Your Message" style={   { backgroundColor : '#f5f5f5' ,height: '200px'}}></textarea>
-          <button type="submit">Send Message</button>
+          <textarea placeholder="Your Message" style={   { backgroundColor : '#f5f5f5' ,height: '200px'}} onChange={(e)=>{settext(e.target.value)}}></textarea>
+          <button type="submit" onClick={()=>{}}>Send Message</button>
         </form>
       </div>
     </div>
